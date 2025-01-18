@@ -23,13 +23,13 @@ export async function POST(request) {
     }
 
     const results = await exa.search(query, {
-      numResults: 10,
+      numResults: 5,
       highlights: true,
       useAutoprompt: true,
     });
+    console.log(results);
 
     return NextResponse.json(results);
-
   } catch (error) {
     console.error('Search API error:', error);
     return NextResponse.json(
