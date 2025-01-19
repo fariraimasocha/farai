@@ -23,7 +23,7 @@ export async function POST(request) {
     }
 
     const results = await exa.search(query, {
-      numResults: 5,
+      numResults: 10,
       highlights: true,
       useAutoprompt: true,
     });

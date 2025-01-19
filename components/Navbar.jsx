@@ -5,11 +5,11 @@ import { motion } from 'framer-motion';
 import {
   Dialog,
   DialogContent,
-  DialogDescription,
   DialogHeader,
   DialogTitle,
   DialogTrigger,
-} from "@/components/ui/dialog"
+} from '@/components/ui/dialog';
+import Link from 'next/link';
 
 const Navbar = () => {
   const handleNewChat = () => {
@@ -19,7 +19,7 @@ const Navbar = () => {
   return (
     <nav className="sticky top-0 backdrop-blur-sm bg-white/75 px-5 py-4 w-full">
       <div className="max-w-7xl mx-auto flex items-center justify-between">
-        <motion.div 
+        <motion.div
           className="flex items-center gap-2 hover:opacity-80 transition-opacity cursor-pointer relative group"
           whileHover={{ scale: 1.05 }}
           onClick={handleNewChat}
@@ -36,15 +36,15 @@ const Navbar = () => {
           </span>
         </motion.div>
         <div className="flex items-center gap-3 sm:gap-5">
-          <a
-            href="#"
+          <Link
+            href="https://github.com/fariraimasocha/farai"
             className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 rounded-lg px-4 py-2 transition-colors duration-200"
           >
             <Github size={18} />
             <span className="font-medium text-sm hidden sm:inline-block">
               Star on GitHub
             </span>
-          </a>
+          </Link>
           <Dialog>
             <DialogTrigger asChild>
               <button
@@ -56,7 +56,9 @@ const Navbar = () => {
             </DialogTrigger>
             <DialogContent className="sm:max-w-[425px]">
               <DialogHeader>
-                <DialogTitle className="text-2xl font-bold">About AI Search</DialogTitle>
+                <DialogTitle className="text-2xl font-bold">
+                  About AI Search
+                </DialogTitle>
               </DialogHeader>
               <div className="mt-4 space-y-4">
                 <div className="bg-gray-50 p-4 rounded-lg">
@@ -68,9 +70,11 @@ const Navbar = () => {
                     <li>Quick access to popular platforms</li>
                   </ul>
                 </div>
-                
+
                 <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-2">How to Use</h3>
+                  <h3 className="font-semibold text-gray-900 mb-2">
+                    How to Use
+                  </h3>
                   <ul className="list-decimal list-inside space-y-2 text-gray-600">
                     <li>Type your query or click a trending topic</li>
                     <li>Click the up arrow or press Enter to search</li>
@@ -80,7 +84,7 @@ const Navbar = () => {
                 </div>
 
                 <div className="text-sm text-gray-500">
-                  Version 1.0.0 • Built with Next.js and Tailwind CSS
+                  Version 1.0.0 • Built with Next.js and exa.ai
                 </div>
               </div>
             </DialogContent>

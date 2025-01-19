@@ -1,11 +1,11 @@
 'use client';
 
-import { ArrowUp, Globe, Zap } from 'lucide-react'
-import { Button } from "@/components/ui/button"
-import { Input } from "@/components/ui/input"
+import { ArrowUp, Globe, Zap } from 'lucide-react';
+import { Button } from '@/components/ui/button';
+import { Input } from '@/components/ui/input';
 import { useState, useEffect } from 'react';
 import { useRouter } from 'next/navigation';
-import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs"
+import { Tabs, TabsList, TabsTrigger, TabsContent } from '@/components/ui/tabs';
 import toast from 'react-hot-toast';
 
 export default function Search() {
@@ -71,15 +71,12 @@ export default function Search() {
   return (
     <div className="min-h-screen flex items-center justify-center">
       <div className="max-w-7xl mx-auto flex flex-col items-center gap-8 px-4 -mt-32">
-        <div className="flex items-center gap-2 text-2xl font-medium">
-          <span className="w-6 h-6 rounded-full bg-gray-200 flex items-center justify-center text-gray-600">
-            👤
-          </span>
-          {query || "what is your question?"}
+        <div className="flex items-center gap-2 text-4xl font-medium">
+          {query || 'What do you want to search?'}
         </div>
-        
+
         <form onSubmit={handleSearch} className="w-full max-w-3xl relative">
-          <Input 
+          <Input
             type="text"
             value={query}
             onChange={(e) => setQuery(e.target.value)}
@@ -124,10 +121,10 @@ export default function Search() {
                 </TabsTrigger>
                 {/* Add more tabs here if needed */}
               </TabsList>
-              
+
               <TabsContent value="web" className="space-y-4">
                 {results.map((result, index) => (
-                  <div 
+                  <div
                     key={index}
                     className="p-6 bg-white rounded-lg border border-gray-200 hover:border-gray-300 transition-colors duration-200"
                   >
@@ -146,36 +143,54 @@ export default function Search() {
                       )}
                       <div className="flex-grow min-w-0">
                         <h3 className="font-medium text-lg mb-1 text-gray-900">
-                          <a href={result.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                          <a
+                            href={result.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-blue-600"
+                          >
                             {result.title}
                           </a>
                         </h3>
-                        
+
                         {result.publishedDate && (
                           <div className="text-sm text-gray-500 mb-2">
-                            Published: {new Date(result.publishedDate).toLocaleDateString()}
+                            Published:{' '}
+                            {new Date(
+                              result.publishedDate
+                            ).toLocaleDateString()}
                           </div>
                         )}
-                        
+
                         {result.author && (
                           <div className="text-sm text-gray-600 mb-3">
-                            <span className="font-medium">Authors:</span> {result.author}
+                            <span className="font-medium">Authors:</span>{' '}
+                            {result.author}
                           </div>
                         )}
 
                         {result.summary && (
                           <div className="mb-4">
-                            <div className="font-medium text-sm text-gray-700 mb-1">Summary</div>
-                            <p className="text-sm text-gray-600">{result.summary}</p>
+                            <div className="font-medium text-sm text-gray-700 mb-1">
+                              Summary
+                            </div>
+                            <p className="text-sm text-gray-600">
+                              {result.summary}
+                            </p>
                           </div>
                         )}
 
                         {result.highlights?.length > 0 && (
                           <div className="mb-4">
-                            <div className="font-medium text-sm text-gray-700 mb-1">Highlights</div>
+                            <div className="font-medium text-sm text-gray-700 mb-1">
+                              Highlights
+                            </div>
                             <div className="space-y-2">
                               {result.highlights.map((highlight, i) => (
-                                <div key={i} className="text-sm text-gray-600 bg-gray-50 p-2 rounded">
+                                <div
+                                  key={i}
+                                  className="text-sm text-gray-600 bg-gray-50 p-2 rounded"
+                                >
                                   {highlight}
                                 </div>
                               ))}
@@ -185,20 +200,35 @@ export default function Search() {
 
                         {result.subpages?.length > 0 && (
                           <div>
-                            <div className="font-medium text-sm text-gray-700 mb-2">Related Documents</div>
+                            <div className="font-medium text-sm text-gray-700 mb-2">
+                              Related Documents
+                            </div>
                             <div className="space-y-3">
                               {result.subpages.map((subpage, i) => (
-                                <div key={i} className="border-l-2 border-gray-200 pl-3">
+                                <div
+                                  key={i}
+                                  className="border-l-2 border-gray-200 pl-3"
+                                >
                                   <h4 className="text-sm font-medium text-gray-800">
-                                    <a href={subpage.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600">
+                                    <a
+                                      href={subpage.url}
+                                      target="_blank"
+                                      rel="noopener noreferrer"
+                                      className="hover:text-blue-600"
+                                    >
                                       {subpage.title}
                                     </a>
                                   </h4>
                                   {subpage.summary && (
-                                    <p className="text-sm text-gray-600 mt-1">{subpage.summary}</p>
+                                    <p className="text-sm text-gray-600 mt-1">
+                                      {subpage.summary}
+                                    </p>
                                   )}
                                   {subpage.highlights?.map((highlight, j) => (
-                                    <div key={j} className="text-sm text-gray-600 bg-gray-50 p-2 rounded mt-2">
+                                    <div
+                                      key={j}
+                                      className="text-sm text-gray-600 bg-gray-50 p-2 rounded mt-2"
+                                    >
                                       {highlight}
                                     </div>
                                   ))}
@@ -209,7 +239,12 @@ export default function Search() {
                         )}
 
                         <div className="mt-4 pt-3 border-t border-gray-100 flex items-center gap-3 text-sm text-gray-500">
-                          <a href={result.url} target="_blank" rel="noopener noreferrer" className="hover:text-blue-600 truncate">
+                          <a
+                            href={result.url}
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="hover:text-blue-600 truncate"
+                          >
                             {result.url}
                           </a>
                         </div>
@@ -224,11 +259,11 @@ export default function Search() {
 
         <div className="flex flex-wrap gap-2 justify-center">
           {[
-            { icon: "🎵", text: "TikTok ban", label: "Trending" },
-            { icon: "🌐", text: "Edge", label: "Tech" },
-            { icon: "🏛️", text: "Washington", label: "Trending" },
-            { icon: "📺", text: "Silo season 3", label: "Trending" },
-            { icon: "🐺", text: "Timberwolv", label: "Trending" },
+            { icon: '👤', text: 'Farirai Masocha', label: 'Developer' },
+            { icon: '🎵', text: 'TikTok ban', label: 'Trending' },
+            { icon: '🌐', text: 'Edge', label: 'Tech' },
+            { icon: '🏛️', text: 'Washington', label: 'Trending' },
+            { icon: '📺', text: 'Silo season 3', label: 'Trending' },
           ].map((item) => (
             <div
               key={item.text}
