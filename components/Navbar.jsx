@@ -66,7 +66,6 @@ const Navbar = () => {
                   <ul className="list-disc list-inside space-y-2 text-gray-600">
                     <li>Advanced AI-powered search capabilities</li>
                     <li>Real-time trending topics</li>
-                    <li>Social media integration</li>
                     <li>Quick access to popular platforms</li>
                   </ul>
                 </div>
