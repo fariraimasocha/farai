@@ -1,5 +1,6 @@
 import { Linkedin, Github, Twitter, Copyright } from 'lucide-react';
 import Link from 'next/link';
+import { Badge } from './ui/badge';
 
 export default function Footer() {
   return (
@@ -16,19 +17,25 @@ export default function Footer() {
             href="linkedin.com/in/fariraimasocha"
             className="hover:opacity-80 transition-opacity"
           >
-            <Linkedin size={20} className="text-gray-900" />
+            <Badge variant="outline">
+              <Linkedin size={20} className="text-gray-800" />
+            </Badge>
           </Link>
           <Link
             href="https://github.com/fariraimasocha"
             className="hover:opacity-80 transition-opacity"
           >
-            <Github size={20} className="text-gray-900" />
+            <Badge variant="outline">
+              <Github size={20} className="text-gray-900" />
+            </Badge>
           </Link>
           <Link
             href="https://x.com/fariraijames"
             className="hover:opacity-80 transition-opacity"
           >
-            <Twitter size={20} className="text-gray-900" />
+            <Badge variant="outline">
+              <Twitter size={20} className="text-gray-900" />
+            </Badge>
           </Link>
         </div>
       </div>

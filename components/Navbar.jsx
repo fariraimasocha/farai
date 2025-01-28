@@ -2,6 +2,7 @@
 
 import { BadgePlus, Github, Info } from 'lucide-react';
 import { motion } from 'framer-motion';
+import { Button } from './ui/button';
 import {
   Dialog,
   DialogContent,
@@ -38,13 +39,15 @@ const Navbar = () => {
         <div className="flex items-center gap-3 sm:gap-5">
           <Link
             href="https://github.com/fariraimasocha/farai"
-            className="flex items-center gap-2 bg-gray-100 hover:bg-gray-200 rounded-lg px-4 py-2 transition-colors duration-200"
           >
-            <Github size={18} />
-            <span className="font-medium text-sm hidden sm:inline-block">
-              Star on GitHub
-            </span>
+            <Button>
+              <Github size={18} />
+              <span className="font-medium text-sm hidden sm:inline-block">
+                Star on GitHub
+              </span>
+            </Button>
           </Link>
+
           <Dialog>
             <DialogTrigger asChild>
               <button

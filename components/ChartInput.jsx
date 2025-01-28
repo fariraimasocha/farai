@@ -1,0 +1,55 @@
+import {
+  Select,
+  SelectContent,
+  SelectGroup,
+  SelectItem,
+  SelectTrigger,
+  SelectValue,
+} from '@/components/ui/select';
+import { Button } from '@/components/ui/button';
+
+const AIChatInput = ({
+  searchMethod,
+  setSearchMethod,
+  query,
+  setQuery,
+  handleSearch,
+}) => {
+  return (
+    <div className="relative w-full max-w-3xl mx-auto rounded-lg border p-4">
+      <div className="absolute top-4 left-4">
+        <Select value={searchMethod} onValueChange={setSearchMethod}>
+          <SelectTrigger className="w-[180px]">
+            <SelectValue placeholder="Choose model" />
+          </SelectTrigger>
+          <SelectContent>
+            <SelectGroup>
+              <SelectItem value="exa">Exa</SelectItem>
+              <SelectItem value="groq">Groq</SelectItem>
+              <SelectItem value="deepseek">DeepSeek</SelectItem>
+            </SelectGroup>
+          </SelectContent>
+        </Select>
+      </div>
+
+      <form onSubmit={handleSearch} className="mt-12">
+        <div className="relative">
+          <textarea
+            value={query}
+            onChange={(e) => setQuery(e.target.value)}
+            placeholder="How can I help you today?"
+            className="w-full min-h-[100px] p-4 bg-transparent text-gray-900 placeholder-zinc-400 resize-none focus:outline-none"
+          />
+
+          <div className="absolute bottom-4 right-4">
+            <Button type="submit" variant="outline">
+              Search
+            </Button>
+          </div>
+        </div>
+      </form>
+    </div>
+  );
+};
+
+export default AIChatInput;
