@@ -14,7 +14,7 @@ import Link from 'next/link';
 
 const Navbar = () => {
   const handleNewChat = () => {
-    window.dispatchEvent(new Event('newChat'));
+    window.location.reload();
   };
 
   return (
