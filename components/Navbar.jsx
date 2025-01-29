@@ -10,7 +10,10 @@ import {
   DialogTitle,
   DialogTrigger,
 } from '@/components/ui/dialog';
+import { Card, CardContent, CardFooter } from './ui/card';
+import { Badge } from './ui/badge';
 import Link from 'next/link';
+import { Linkedin, Twitter } from 'lucide-react';
 
 const Navbar = () => {
   const handleNewChat = () => {
@@ -37,10 +40,8 @@ const Navbar = () => {
           </span>
         </motion.div>
         <div className="flex items-center gap-3 sm:gap-5">
-          <Link
-            href="https://github.com/fariraimasocha/farai"
-          >
-            <Button>
+          <Link href="https://github.com/fariraimasocha/farai">
+            <Button variant="outline">
               <Github size={18} />
               <span className="font-medium text-sm hidden sm:inline-block">
                 Star on GitHub
@@ -49,47 +50,81 @@ const Navbar = () => {
           </Link>
 
           <Dialog>
-            <DialogTrigger asChild>
-              <button
-                className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
-                aria-label="Information"
-              >
-                <Info size={20} className="text-gray-600" />
-              </button>
-            </DialogTrigger>
-            <DialogContent className="sm:max-w-[425px]">
-              <DialogHeader>
-                <DialogTitle className="text-2xl font-bold">
-                  About AI Search
-                </DialogTitle>
-              </DialogHeader>
-              <div className="mt-4 space-y-4">
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-2">Features</h3>
-                  <ul className="list-disc list-inside space-y-2 text-gray-600">
-                    <li>Advanced AI-powered search capabilities</li>
-                    <li>Real-time trending topics</li>
-                    <li>Quick access to popular platforms</li>
-                  </ul>
-                </div>
-
-                <div className="bg-gray-50 p-4 rounded-lg">
-                  <h3 className="font-semibold text-gray-900 mb-2">
-                    How to Use
-                  </h3>
-                  <ul className="list-decimal list-inside space-y-2 text-gray-600">
-                    <li>Type your query or click a trending topic</li>
-                    <li>Click the up arrow or press Enter to search</li>
-                    <li>Use social media shortcuts for quick access</li>
-                    <li>Click "New Chat" to start fresh</li>
-                  </ul>
-                </div>
-
-                <div className="text-sm text-gray-500">
-                  Version 1.0.0 • Built with Next.js and exa.ai
-                </div>
-              </div>
-            </DialogContent>
+            <Card>
+              <DialogTrigger asChild>
+                <button
+                  className="p-2 hover:bg-gray-100 rounded-lg transition-colors duration-200"
+                  aria-label="Information"
+                >
+                  <Info size={20} className="text-gray-600" />
+                </button>
+              </DialogTrigger>
+              <DialogContent className="sm:max-w-[525px]">
+                <DialogHeader>
+                  <DialogTitle className="text-2xl font-bold mb-4">
+                    Open Source AI Search Engine
+                  </DialogTitle>
+                </DialogHeader>
+                <CardContent className="space-y-4">
+                  <p className="text-gray-700 leading-relaxed">
+                    An advanced open-source chat engine that leverages multiple
+                    AI models for enhanced search capabilities.
+                  </p>
+                  <div className="space-y-2">
+                    <h3 className="font-semibold text-gray-900">
+                      Key Features:
+                    </h3>
+                    <ul className="list-disc pl-5 space-y-1 text-gray-600">
+                      <li>DeepSeek Integration - Advanced understanding</li>
+                      <li>Exa AI - Real-time search capabilities</li>
+                      <li>Groq Support - High-performance inference</li>
+                      <li>
+                        Multi-model Architecture - Flexible model selection
+                      </li>
+                      <li>
+                        Open Source - Fully customizable and community-driven
+                      </li>
+                    </ul>
+                  </div>
+                </CardContent>
+                <CardFooter className="text-gray-600 text-sm">
+                  <div className='flex flex-col'>
+                 <div>
+                 A Side Project by
+                  <span className="px-1">
+                    <Badge variant="outline">Farirai Masocha</Badge>
+                  </span>
+                 </div>
+                  <div className="flex items-center space-x-5 mt-4">
+                    <Link
+                      href="https://linkedin.com/in/fariraimasocha"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Badge variant="outline">
+                        <Linkedin size={20} className="text-gray-800" />
+                      </Badge>
+                    </Link>
+                    <Link
+                      href="https://github.com/fariraimasocha"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Badge variant="outline">
+                        <Github size={20} className="text-gray-900" />
+                      </Badge>
+                    </Link>
+                    <Link
+                      href="https://x.com/fariraijames"
+                      className="hover:opacity-80 transition-opacity"
+                    >
+                      <Badge variant="outline">
+                        <Twitter size={20} className="text-gray-900" />
+                      </Badge>
+                    </Link>
+                  </div>
+                  </div>
+                </CardFooter>
+              </DialogContent>
+            </Card>
           </Dialog>
         </div>
       </div>
