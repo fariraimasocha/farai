@@ -14,7 +14,7 @@ export default function Footer() {
         </div>
         <div className="flex items-center space-x-5">
           <Link
-            href="linkedin.com/in/fariraimasocha"
+            href="https://linkedin.com/in/fariraimasocha"
             className="hover:opacity-80 transition-opacity"
           >
             <Badge variant="outline">
