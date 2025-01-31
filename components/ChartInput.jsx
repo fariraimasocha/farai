@@ -28,6 +28,7 @@ const AIChatInput = ({
               <SelectItem value="exa">Exa</SelectItem>
               <SelectItem value="groq">Groq</SelectItem>
               <SelectItem value="deepseek">DeepSeek</SelectItem>
+              <SelectItem value="mixtral">Mixtral</SelectItem>
             </SelectGroup>
           </SelectContent>
         </Select>

@@ -25,7 +25,11 @@ export default function Search() {
       } else if (searchMethod === 'deepseek') {
         endpoint = '/api/deepseek';
         body = { userMessage: query };
+      } else if (searchMethod === 'mixtral') {
+        endpoint = '/api/mixtral';
+        body = { userMessage: query };
       }
+
 
       const response = await fetch(endpoint, {
         method: 'POST',
