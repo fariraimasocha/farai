@@ -7,7 +7,7 @@ import {
   SelectValue,
 } from '@/components/ui/select';
 import { Button } from '@/components/ui/button';
-import { Globe } from 'lucide-react';
+import { CircleChevronRight } from 'lucide-react';
 
 const AIChatInput = ({
   searchMethod,
@@ -44,7 +44,7 @@ const AIChatInput = ({
 
           <div className="absolute bottom-4 right-4">
             <Button type="submit" variant="outline">
-              <Globe size={20} className="" />
+              <CircleChevronRight size={20} />
             </Button>
           </div>
         </div>

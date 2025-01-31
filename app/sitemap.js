@@ -1,5 +1,5 @@
 export default function sitemap() {
-  const baseUrl = 'http://localhost:3000';
+  const baseUrl = 'https://farisearch.co.zw/';
   return [
     {
       url: `${baseUrl}/`,

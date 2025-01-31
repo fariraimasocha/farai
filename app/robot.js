@@ -5,6 +5,6 @@ export default function robots() {
       allow: ['/'],
       disallow: [],
     },
-    sitemap: 'http:localhost:3000/sitemap.xml',
+    sitemap: 'https://farisearch.co.zw/sitemap.xml',
   };
 }
